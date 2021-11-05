@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+
+    <!--<script src="{{ url_for('static', filename='js/tab_script.js') }}"></script>-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</head>
+<body>
+    <p class="tab">
+            <button class="btn btn-light" onclick="openTab(event, 'all_persons')">Все</button>
+            <button class="btn btn-light" onclick="openTab(event, 'history')">История</button>
+            <button class="btn btn-light" onclick="openTab(event, 'add_person')">Добавить</button>
+        </p>
+
+        <div id="all_persons" class="tabcontent">
+            <div class="control_panel">
+                <button class="btn btn-primary btn-sm" onclick="get_all_persons()">Обновить</button>
+                <button class="btn btn-danger btn-sm" onclick="delete_many_persons()">Удалить выбранное</button>
+            </div>
+
+                   <table id="options_table">
+
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="pers_num_opt" placeholder="Личный номер">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="rank_opt" placeholder="Звание">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="study_group_opt" placeholder="Учебная группа">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="surname_opt" placeholder="Фамилия">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="name_opt" placeholder="Имя">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="patronymic_opt" placeholder="Отчество">
+                        </td>
+                    </tr>
+
+                   </table>
+                <div>
+                    <button class="btn btn-light btn-sm" onclick="search_persons()">Поиск</button>
+                </div>
+
+
+            <table align="center" class="fl-table" id="all_persons_table">
+                <th class="table-dark"></th>
+                <th class="table-dark">Личный номер</th>
+                <th class="table-dark">Звание</th>
+                <th class="table-dark">Фамилия</th>
+                <th class="table-dark">Имя</th>
+                <th class="table-dark">Отчество</th>
+                <th class="table-dark">Учебная группа</th>
+                <th class="table-dark"></th>
+            </table>
+        </div>
+        <div id="history" class="tabcontent">
+
+        </div>
+        <div id="add_person" class="tabcontent">
+
+        </div>
+    </div>
+
+</body>
+</html>

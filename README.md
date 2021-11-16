@@ -1,2 +1,2 @@
-# Education Monitoring and Analyzis System
+# Education Monitoring and Analysis System
  
